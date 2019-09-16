@@ -17,6 +17,8 @@ sudo systemctl start sshd
 sudo systemctl enable ssh
 ```
 
+https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-18-04/
+
 
 ## yocto に必要なもの
 
