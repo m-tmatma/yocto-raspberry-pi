@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-BRANCHNAME=krogoth
+BRANCHNAME=thud
 git clone  -b $BRANCHNAME  git://git.yoctoproject.org/poky
 
 cd poky
