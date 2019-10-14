@@ -14,8 +14,8 @@ bitbake-layers add-layer ../meta-raspberrypi
 bitbake-layers add-layer ../meta-rpi
 
 cat $SCRIPT_DIR/extra-local.conf >> conf/local.conf
-mkdir -p ../../downloads
-ln -sf ../../downloads
+mkdir -p $SCRIPT_DIR/downloads
+ln -sf   $SCRIPT_DIR/downloads
 
 bitbake console-image
 
