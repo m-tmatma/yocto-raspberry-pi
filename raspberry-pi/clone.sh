@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 BRANCHNAME=thud
+cd container/yocto
 git clone  -b $BRANCHNAME  git://git.yoctoproject.org/poky
 
 cd poky
