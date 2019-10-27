@@ -2,7 +2,7 @@ version: '2'
 services:
   yocto:
     build: ./docker-conf
-    container_name: yocto
+    container_name: yocto-raspberry
     restart: always
     volumes:
       - ./container/yocto:/home/yocto
