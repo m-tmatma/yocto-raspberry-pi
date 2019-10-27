@@ -1,0 +1,14 @@
+version: '2'
+services:
+  yocto:
+    build: ./docker-conf
+    container_name: yocto-raspberry
+    restart: always
+    volumes:
+      - ./container/yocto:/home/yocto
+      - ./container/opt:/opt
+
+volumes:
+  yocto:
+    driver: local
+
