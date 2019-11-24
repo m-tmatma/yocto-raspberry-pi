@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-BRANCHNAME=zeus
+BRANCHNAME=warrior
 ROOTDIR=container/yocto/poky
 
 git clone  -b $BRANCHNAME  https://github.com/yocto-mirror-raspberrypi/poky.git                $ROOTDIR
