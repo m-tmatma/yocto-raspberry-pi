@@ -1,6 +1,9 @@
 #!/bin/sh
 
-sudo umount /dev/sda?
+OUTDEVICE=/dev/sdb
+INFILE=./container/yocto/poky/build-rpi/tmp/deploy/images/raspberrypi4/console-image-raspberrypi4.rpi-sdimg
+sudo umount ${OUTDEVICE}?
 lsblk
-sudo dd if=./poky/build-rpi/tmp/deploy/images/raspberrypi3/console-image-raspberrypi3.rpi-sdimg of=/dev/sda
+sudo dd if=${INFILE} of=${OUTDEVICE}
+
 
