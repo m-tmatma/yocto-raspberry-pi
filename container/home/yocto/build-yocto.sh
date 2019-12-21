@@ -33,5 +33,5 @@ bitbake meta-toolchain
 find $SCRIPT_DIR/build-rpi/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
 
 #bitbake core-image-full-cmdline
-bitbake console-image
+bitbake -v -DD console-image
 
