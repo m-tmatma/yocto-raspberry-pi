@@ -4,7 +4,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 cd poky
 source oe-init-build-env build-rpi
-bitbake-layers remove-layer meta-yocto-bsp
+#bitbake-layers remove-layer meta-yocto-bsp
 bitbake-layers add-layer ../meta-openembedded/meta-oe
 bitbake-layers add-layer ../meta-openembedded/meta-python
 bitbake-layers add-layer ../meta-openembedded/meta-multimedia
