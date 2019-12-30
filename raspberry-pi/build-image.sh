@@ -1,4 +1,4 @@
 #!/bin/sh
 
-sudo docker build -t yocto-raspberry ./docker-conf
+docker build -t yocto-raspberry ./docker-conf
 
