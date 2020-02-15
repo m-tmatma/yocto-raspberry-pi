@@ -4,6 +4,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 LOOPBACK_DEVICE=`losetup --show -f -P $SCRIPT_DIR/container/yocto/poky/build-rpi/tmp/deploy/images/raspberrypi4/console-image-raspberrypi4.rpi-sdimg`
 MOUNT_POINT=/mnt/rpi-img
 
+mkdir -p   $MOUNT_POINT
 mount      ${LOOPBACK_DEVICE}p2 $MOUNT_POINT
 
 ls -l $MOUNT_POINT
