@@ -2,6 +2,6 @@
 
 ROOTDIR=container/yocto/poky
 
-pushd  $ROOTDIR                    &&  git remote update  && popd
-pushd  $ROOTDIR/meta-openembedded  &&  git remote update  && popd
-pushd  $ROOTDIR/meta-raspberrypi   &&  git remote update  && popd
+pushd  $ROOTDIR                    &&  git pull origin  && popd
+pushd  $ROOTDIR/meta-openembedded  &&  git pull origin  && popd
+pushd  $ROOTDIR/meta-raspberrypi   &&  git pull origin  && popd
