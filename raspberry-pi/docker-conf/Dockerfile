@@ -7,6 +7,7 @@ RUN apt-get update --fix-missing && apt-get dist-upgrade -y && apt-get autoremov
      xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
      xterm \ 
      locales \
+     sudo \
  && rm -rf /var/lib/apt/lists/*
 
 # Locales
