@@ -17,5 +17,11 @@ cat $SCRIPT_DIR/extra-local.conf >> conf/local.conf
 mkdir -p $SCRIPT_DIR/downloads
 ln -sf   $SCRIPT_DIR/downloads
 
-bitbake console-image
+#bitbake console-image
+bitbake core-image-full-cmdline -c populate_sdk
+
+PASSWORD=yocto
+find ./tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "echo ${PASSWORD} | sudo -S {} -y"
+
+bitbake core-image-full-cmdline
 
