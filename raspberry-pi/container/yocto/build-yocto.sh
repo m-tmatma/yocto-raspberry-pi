@@ -18,10 +18,12 @@ mkdir -p $SCRIPT_DIR/downloads
 ln -sf   $SCRIPT_DIR/downloads
 
 #bitbake console-image
-bitbake core-image-full-cmdline -c populate_sdk
+#bitbake core-image-full-cmdline -c populate_sdk
+bitbake meta-ide-support
+bitbake meta-toolchain
 
-PASSWORD=yocto
-find ./tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "echo ${PASSWORD} | sudo -S {} -y"
+#PASSWORD=yocto
+#find ./tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "echo ${PASSWORD} | sudo -S {} -y"
 
 bitbake core-image-full-cmdline
 
