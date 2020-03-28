@@ -18,6 +18,9 @@ mkdir -p $SCRIPT_DIR/downloads
 ln -sf   $SCRIPT_DIR/downloads
 
 #bitbake console-image
+bitbake meta-ide-support
+bitbake meta-toolchain
+
 bitbake core-image-full-cmdline -c populate_sdk
 
 PASSWORD=yocto
