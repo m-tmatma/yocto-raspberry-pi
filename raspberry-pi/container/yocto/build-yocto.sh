@@ -25,5 +25,6 @@ bitbake meta-toolchain
 PASSWORD=yocto
 find ./tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "echo ${PASSWORD} | sudo -S {} -y"
 
-bitbake core-image-full-cmdline
+#bitbake core-image-full-cmdline
+bitbake console-image
 
