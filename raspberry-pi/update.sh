@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-ROOTDIR=container/yocto/poky
+ROOTDIR=container/home/yocto/poky
 
 pushd  $ROOTDIR                    &&  git pull origin  && popd
 pushd  $ROOTDIR/meta-openembedded  &&  git pull origin  && popd

@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 BRANCHNAME=warrior
-ROOTDIR=container/yocto/poky
+ROOTDIR=container/home/yocto/poky
 
 git clone  -b $BRANCHNAME  https://github.com/yocto-mirror-raspberrypi/poky.git                $ROOTDIR
 git clone  -b $BRANCHNAME  https://github.com/yocto-mirror-raspberrypi/meta-openembedded.git   $ROOTDIR/meta-openembedded
