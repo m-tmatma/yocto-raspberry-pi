@@ -1,5 +1,6 @@
 FROM ubuntu:16.04
 ENV DEBIAN_FRONTEND noninteractive
+RUN sed -i.bak -r 's!(deb|deb-src) \S+!\1 mirror://mirrors.ubuntu.com/mirrors.txt!' /etc/apt/sources.list
 RUN apt-get update --fix-missing && apt-get dist-upgrade -y && apt-get autoremove --purge -y \
  && apt-get install --fix-missing -y \
      gawk wget git-core diffstat unzip texinfo gcc-multilib \
