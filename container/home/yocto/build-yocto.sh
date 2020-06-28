@@ -4,6 +4,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 source $SCRIPT_DIR/poky/oe-init-build-env $SCRIPT_DIR/build-rpi
 bitbake-layers add-layer $SCRIPT_DIR/meta-raspberrypi
+bitbake-layers add-layer $SCRITP_DIR/meta-test
 
 cat $SCRIPT_DIR/extra-local.conf >> conf/local.conf
 
@@ -20,8 +21,9 @@ fi
 
 #bitbake console-image
 #bitbake core-image-full-cmdline -c populate_sdk
-bitbake meta-ide-support
-bitbake meta-toolchain
+#bitbake meta-ide-support
+#bitbake meta-toolchain
+bitbake test-image
 
 find $SCRIPT_DIR/build-rpi/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
 
