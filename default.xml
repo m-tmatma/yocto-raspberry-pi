@@ -6,11 +6,13 @@
   <remote fetch="https://github.com/openembedded"                name="meta-openembedded"/>
   <remote fetch="https://github.com/meta-qt5"                    name="meta-qt5"/>
   <remote fetch="https://github.com/jumpnow"                     name="meta-rpi"/>
+  <remote fetch="https://github.com/yocto-mirror-raspberrypi"    name="meta-virtualization"/>
 
   <project remote="yocto-mirror-raspberrypi"      upstream="warrior" name="poky"                 path="container/home/yocto/poky"                 />
   <project remote="meta-openembedded"             upstream="warrior" name="meta-openembedded"    path="container/home/yocto/meta-openembedded"    />
   <project remote="yocto-mirror-raspberrypi"      upstream="warrior" name="meta-raspberrypi"     path="container/home/yocto/meta-raspberrypi"     />
   <project remote="meta-qt5"                      upstream="warrior" name="meta-qt5"             path="container/home/yocto/meta-qt5"             />
   <project remote="meta-rpi"                      upstream="warrior" name="meta-rpi"             path="container/home/yocto/meta-rpi"             />
+  <project remote="meta-virtualization"           upstream="warrior" name="meta-virtualization"  path="container/home/yocto/meta-virtualization"  />
 </manifest>
 
