@@ -8,6 +8,7 @@ bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-oe
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-python
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-multimedia
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-networking
+bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-filesystems
 bitbake-layers add-layer $SCRIPT_DIR/meta-qt5
 bitbake-layers add-layer $SCRIPT_DIR/meta-raspberrypi
 bitbake-layers add-layer $SCRIPT_DIR/meta-virtualization
