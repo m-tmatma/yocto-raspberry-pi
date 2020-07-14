@@ -10,6 +10,7 @@ bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-multimedia
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-networking
 bitbake-layers add-layer $SCRIPT_DIR/meta-qt5
 bitbake-layers add-layer $SCRIPT_DIR/meta-raspberrypi
+bitbake-layers add-layer $SCRIPT_DIR/meta-virtualization
 bitbake-layers add-layer $SCRIPT_DIR/meta-rpi
 
 cat $SCRIPT_DIR/extra-local.conf >> conf/local.conf
