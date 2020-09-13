@@ -43,6 +43,7 @@ docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
 	-v $HOST_DOCKER_OPT:$TARGET_OPT \
 	-v $HOST_DL_DIR:$TARGET_DL_DIR \
 	-v $HOST_DOCKER_HOME:$TARGET_HOME \
+	-v /etc/apt/apt.conf:/etc/apt/apt.conf \
 	-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
 
 if [ x$COMMAND_ARG = x"build" ] ; then
