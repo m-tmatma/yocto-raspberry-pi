@@ -9,6 +9,9 @@ TARGET_OPT=/opt
 
 mkdir -p $DOCKER_HOME
 mkdir -p $DOCKER_OPT
-docker run -it -u yocto:yocto -v $DOCKER_OPT:$TARGET_OPT -v $DOCKER_HOME:$TARGET_HOME -w $TARGET_HOME yocto-raspberry /bin/bash
+docker run -it --rm -u yocto:yocto \
+      -v $DOCKER_OPT:$TARGET_OPT \
+      -v $DOCKER_HOME:$TARGET_HOME \
+      -w $TARGET_HOME yocto-raspberry /bin/bash
 
 
