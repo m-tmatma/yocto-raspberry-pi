@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 MIRROR_DIR=$SCRIPT_DIR/mirror
@@ -6,25 +6,18 @@ MIRROR_DIR=$SCRIPT_DIR/mirror
 rm -rf $MIRROR_DIR
 mkdir  $MIRROR_DIR
 
-cd $MIRROR_DIR
-git clone --mirror  https://github.com/yocto-mirror-raspberrypi/poky.git
-cd  poky.git
-git remote add upstream git://git.yoctoproject.org/poky
-git remote update
-git push --mirror origin
+mirror_yocoto() {
+    git clone --bare git://git.yoctoproject.org/$1 $1
+    cd $1
+    git push --mirror https://github.com/yocto-mirror-raspberrypi/$1.git
+    cd ..
+
+    rm -rf $1
+}
 
 cd $MIRROR_DIR
-git clone --mirror    https://github.com/yocto-mirror-raspberrypi/meta-openembedded.git
-cd  meta-openembedded.git
-git remote add upstream git://git.yoctoproject.org/meta-openembedded
-git remote update
-git push --mirror origin
 
-cd $MIRROR_DIR
-git clone --mirror    https://github.com/yocto-mirror-raspberrypi/meta-raspberrypi.git
-cd  meta-raspberrypi.git
-git remote add upstream git://git.yoctoproject.org/meta-raspberrypi
-git remote update
-git push --mirror origin
+mirror_yocoto poky
+mirror_yocoto meta-raspberrypi
 
 cd $SCRIPT_DIR
