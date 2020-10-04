@@ -2,6 +2,7 @@
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
+DOWNLOADS=${1:-$SCRIPT_DIR/container/home/yocto/downloads}
 TARGET_HOME=/home/yocto
 REMOTE_URL=$(git remote get-url origin)
 CONTAINER_NAME=$(basename $REMOTE_URL)__$(basename $SCRIPT_DIR)__$(git rev-parse --short HEAD)__$(date "+%Y%m%d-%H%M%S")
@@ -14,6 +15,7 @@ mkdir -p $DOCKER_OPT
 docker run --rm -u yocto:yocto \
         --name $CONTAINER_NAME \
 	-v $DOCKER_OPT:$TARGET_OPT \
+	-v $DOWNLOADS:$TARGET_HOME/downloads \
 	-v $DOCKER_HOME:$TARGET_HOME \
 	-w $TARGET_HOME yocto-raspberry $TARGET_HOME/build-yocto.sh
 
