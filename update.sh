@@ -1,7 +1,15 @@
 #!/bin/bash -e
 
-ROOTDIR=container/home/yocto/poky
+ROOTDIR=container/home/yocto
 
-pushd  $ROOTDIR                    &&  git pull origin  && popd
-pushd  $ROOTDIR/meta-openembedded  &&  git pull origin  && popd
-pushd  $ROOTDIR/meta-raspberrypi   &&  git pull origin  && popd
+update () {
+	echo update $1
+	pushd $ROOTDIR/$1 && git pull origin && popd
+}
+
+update meta-openembedded
+update meta-qt5
+update meta-raspberrypi
+update meta-rpi
+update poky
+
