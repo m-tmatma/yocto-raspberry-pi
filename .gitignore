@@ -1,6 +1,8 @@
-downloads
-container/home/yocto/poky/
-container/opt/poky/
-nohup.out
 .wget-hsts
 *.bak
+downloads
+container/home/yocto/build-rpi/
+container/home/yocto/poky/
+container/opt/poky/
+container/home/yocto/meta-*
+nohup.out
