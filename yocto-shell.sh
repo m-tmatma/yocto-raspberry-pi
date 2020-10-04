@@ -5,7 +5,8 @@ DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
 DOWNLOADS=${1:-$SCRIPT_DIR/container/home/yocto/downloads}
 TARGET_HOME=/home/yocto
 REMOTE_URL=$(git remote get-url origin)
-CONTAINER_NAME=$(basename $REMOTE_URL)__$(basename $SCRIPT_DIR)__$(git rev-parse --short HEAD)__$(date "+%Y%m%d-%H%M%S")
+BRANCH_NAME=$(git name-rev --name-only HEAD | sed "s/\W/_/g")
+CONTAINER_NAME=$(basename $REMOTE_URL)__${BRANCH_NAME}__$(basename $SCRIPT_DIR)__$(git rev-parse --short HEAD)__$(date "+%Y%m%d-%H%M%S")
 
 DOCKER_OPT=$SCRIPT_DIR/container/opt
 TARGET_OPT=/opt
