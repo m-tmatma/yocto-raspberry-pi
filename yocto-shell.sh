@@ -13,6 +13,7 @@ TARGET_OPT=/opt
 
 mkdir -p $DOCKER_HOME
 mkdir -p $DOCKER_OPT
+mkdir -p $DOWNLOADS
 docker run -it --rm -u yocto:yocto \
       --name $CONTAINER_NAME \
       -v $DOCKER_OPT:$TARGET_OPT \
