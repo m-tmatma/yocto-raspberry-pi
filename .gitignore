@@ -1,5 +1,6 @@
 .wget-hsts
 *.bak
+.bash_history
 downloads
 container/home/yocto/build-rpi/
 container/home/yocto/poky/
