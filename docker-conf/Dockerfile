@@ -9,6 +9,8 @@ RUN sed -i.bak -r 's!(deb|deb-src) \S+!\1 mirror://mirrors.ubuntu.com/mirrors.tx
      xterm \ 
      locales \
      sudo \
+     nano \
+     vim  \
  && rm -rf /var/lib/apt/lists/*
 
 # Locales
