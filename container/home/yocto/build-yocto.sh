@@ -27,6 +27,6 @@ bitbake test-image
 
 find $SCRIPT_DIR/build-rpi/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
 
-bitbake core-image-full-cmdline
+#bitbake core-image-full-cmdline
 #bitbake console-image
 
