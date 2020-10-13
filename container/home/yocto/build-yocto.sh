@@ -27,11 +27,7 @@ fi
 
 #bitbake console-image
 #bitbake core-image-full-cmdline -c populate_sdk
-bitbake meta-ide-support
-bitbake meta-toolchain
-
-find $SCRIPT_DIR/build-rpi/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
-
-#bitbake core-image-full-cmdline
-bitbake console-image
+bitbake meta-ide-support  --runall=fetch
+bitbake meta-toolchain    --runall=fetch
+bitbake console-image     --runall=fetch
 
