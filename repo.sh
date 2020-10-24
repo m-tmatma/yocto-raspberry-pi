@@ -1,6 +1,5 @@
 #!/bin/bash -e
 
-BRANCHNAME=$(git symbolic-ref --short HEAD)
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 # 'repo' command
@@ -13,5 +12,7 @@ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ${REPO}
 chmod a+x ${REPO}
 PATH=${REPO_DIR}:$PATH
 
-repo init -m default.xml -u $(git rev-parse --show-toplevel) -b ${BRANCHNAME}
+BRANCHNAME=$(git symbolic-ref --short HEAD)
+REPO_XML_ROOT=$(git rev-parse --show-toplevel)
+repo init -m default.xml -u ${REPO_XML_ROOT} -b ${BRANCHNAME}
 repo sync -j4
