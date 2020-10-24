@@ -13,5 +13,5 @@ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ${REPO}
 chmod a+x ${REPO}
 PATH=${REPO_DIR}:$PATH
 
-repo init -u https://github.com/m-tmatma/yocto-raspberry-pi.git -b $BRANCHNAME
+repo init -m default.xml -u $(git rev-parse --show-toplevel) -b ${BRANCHNAME}
 repo sync -j4
