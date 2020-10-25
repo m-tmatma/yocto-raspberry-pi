@@ -8,3 +8,5 @@ container/opt/poky/
 container/home/yocto/meta-*
 container/home/yocto/.*
 nohup.out*
+.repo
+bin
