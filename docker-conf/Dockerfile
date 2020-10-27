@@ -28,3 +28,6 @@ RUN useradd -m ${USER}
 RUN gpasswd -a ${USER} sudo
 RUN echo "${USER}:yocto" | chpasswd
 
+RUN apt-get update --fix-missing \
+ && apt-get install -y tmux  \
+ && rm -rf /var/lib/apt/lists/*
