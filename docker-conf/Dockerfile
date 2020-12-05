@@ -29,4 +29,5 @@ RUN echo "${USER}:yocto" | chpasswd
 
 RUN apt-get update --fix-missing \
  && apt-get install -y tmux  \
+ && apt-get install -y tzdata  \
  && rm -rf /var/lib/apt/lists/*
