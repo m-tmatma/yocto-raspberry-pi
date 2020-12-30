@@ -1,10 +1,22 @@
-#!/bin/bash -e
+#!/bin/bash -ev
 
-BRANCHNAME=warrior
-ROOTDIR=container/home/yocto
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+REPO_URL=$SCRIPT_DIR
 
-git clone  -b $BRANCHNAME  https://github.com/yocto-mirror-raspberrypi/poky.git                $ROOTDIR/poky
-git clone  -b $BRANCHNAME  https://github.com/openembedded/meta-openembedded.git               $ROOTDIR/meta-openembedded
-git clone  -b $BRANCHNAME  https://github.com/yocto-mirror-raspberrypi/meta-raspberrypi.git    $ROOTDIR/meta-raspberrypi
-git clone  -b $BRANCHNAME  https://github.com/meta-qt5/meta-qt5.git                            $ROOTDIR/meta-qt5
-git clone  -b $BRANCHNAME  https://github.com/jumpnow/meta-rpi.git                             $ROOTDIR/meta-rpi
+# Top dir of source
+HOST_DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
+
+# 'repo' command
+REPO_DIR=$SCRIPT_DIR/bin
+REPO=$REPO_DIR/repo
+
+# get 'repo'
+if [ ! -e ${REPO} ] ; then
+    mkdir -p $REPO_DIR
+    curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ${REPO}
+fi
+chmod a+x ${REPO}
+PATH=${REPO_DIR}:$PATH
+
+repo init -u $REPO_URL -b $(git rev-parse HEAD)
+repo sync -j$(nproc --all)
