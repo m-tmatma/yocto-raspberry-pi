@@ -11,8 +11,10 @@ REPO_DIR=$SCRIPT_DIR/bin
 REPO=$REPO_DIR/repo
 
 # get 'repo'
-mkdir -p $REPO_DIR
-curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ${REPO}
+if [ ! -e ${REPO} ] ; then
+    mkdir -p $REPO_DIR
+    curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ${REPO}
+fi
 chmod a+x ${REPO}
 PATH=${REPO_DIR}:$PATH
 
