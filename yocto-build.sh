@@ -23,7 +23,7 @@ docker run --rm -u yocto:yocto \
 	--name $CONTAINER_NAME \
 	-v $HOST_DOCKER_OPT:$TARGET_OPT \
 	-v $HOST_DL_DIR:$TARGET_DL_DIR \
-	-v $DOCKER_HOME:$TARGET_HOME \
+	-v $HOST_DOCKER_HOME:$TARGET_HOME \
 	-w $TARGET_HOME yocto-raspberry $TARGET_HOME/build-yocto.sh
 
 ls -Ll $HOST_DOCKER_HOME/build-rpi/tmp/deploy/images/raspberrypi4/*-image-*
