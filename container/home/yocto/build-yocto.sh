@@ -13,8 +13,17 @@ bitbake-layers add-layer $SCRIPT_DIR/meta-raspberrypi
 bitbake-layers add-layer $SCRIPT_DIR/meta-rpi
 
 cat $SCRIPT_DIR/extra-local.conf >> conf/local.conf
-mkdir -p $SCRIPT_DIR/downloads
-ln -sf   $SCRIPT_DIR/downloads
+
+TARGET_SSTATE_DIR=/home/shared/sstate-cache
+TARGET_DL_DIR=/home/shared/downloads
+
+rm -f conf/site.conf
+if [ -e "$TARGET_SSTATE_DIR" ] ; then
+    echo SSTATE_DIR=\"$TARGET_SSTATE_DIR\" >> conf/site.conf
+fi
+if [ -e "$TARGET_DL_DIR" ] ; then
+    echo DL_DIR=\"$TARGET_DL_DIR\" >> conf/site.conf
+fi
 
 #bitbake console-image
 #bitbake core-image-full-cmdline -c populate_sdk
