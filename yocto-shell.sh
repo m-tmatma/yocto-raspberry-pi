@@ -39,6 +39,7 @@ fi
 
 docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
 	--name $CONTAINER_NAME \
+	-p 8000:8000 \
 	-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
 	-v $HOST_DOCKER_OPT:$TARGET_OPT \
 	-v $HOST_DL_DIR:$TARGET_DL_DIR \
