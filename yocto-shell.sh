@@ -13,34 +13,38 @@ CONTAINER_NAME=$(basename $REMOTE_URL)--${BRANCH_NAME}--$(basename $SCRIPT_DIR)_
 HOST_DOCKER_OPT=$SCRIPT_DIR/container/opt
 TARGET_OPT=/opt
 
-HOST_DL_DIR=$SCRIPT_DIR/container/home/yocto/downloads
-TARGET_DL_DIR=$TARGET_HOME/downloads
+HOST_SSTATE_DIR=$HOME/shared/$IMAGEBASE/sstate-cache
+HOST_DL_DIR=$HOME/shared/$IMAGEBASE/downloads
+TARGET_SSTATE_DIR=/home/shared/sstate-cache
+TARGET_DL_DIR=/home/shared/downloads
 
 mkdir -p $HOST_DOCKER_HOME
 mkdir -p $HOST_DOCKER_OPT
+mkdir -p $HOST_SSTATE_DIR
 mkdir -p $HOST_DL_DIR
 
 COMMAND_ARG=$1
 if [ x$COMMAND_ARG = x"build" ] ; then
-      COMMAND_LINE=$TARGET_HOME/build-yocto.sh
-      ADDITIONAL_OPT=
+	COMMAND_LINE=$TARGET_HOME/build-yocto.sh
+	ADDITIONAL_OPT=
 elif [ x$COMMAND_ARG = x"shell" ] ; then
-      COMMAND_LINE=/bin/bash
-      ADDITIONAL_OPT=-it
+	COMMAND_LINE=/bin/bash
+	ADDITIONAL_OPT=-it
 else
-      echo usage:
-      echo $0 build
-      echo $0 shell
-      exit 0
+	echo usage:
+	echo $0 build
+	echo $0 shell
+	exit 0
 fi
 
 docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
-      --name $CONTAINER_NAME \
-      -v $HOST_DOCKER_OPT:$TARGET_OPT \
-      -v $HOST_DL_DIR:$TARGET_DL_DIR \
-      -v $HOST_DOCKER_HOME:$TARGET_HOME \
-      -w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
+	--name $CONTAINER_NAME \
+	-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
+	-v $HOST_DOCKER_OPT:$TARGET_OPT \
+	-v $HOST_DL_DIR:$TARGET_DL_DIR \
+	-v $HOST_DOCKER_HOME:$TARGET_HOME \
+	-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
 
 if [ x$COMMAND_ARG = x"build" ] ; then
-      ls -Ll $HOST_DOCKER_HOME/build-rpi/tmp/deploy/images/raspberrypi4/*-image-*
+	ls -Ll $HOST_DOCKER_HOME/build-rpi/tmp/deploy/images/raspberrypi4/*-image-*
 fi
