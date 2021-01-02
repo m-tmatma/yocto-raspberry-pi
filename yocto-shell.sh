@@ -1,6 +1,7 @@
 #!/bin/sh -e
 
-SCRIPT_DIR=$(cd $(dirname $0); pwd)
+SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+source ${SCRIPT_DIR}/common-variable.sh
 
 HOST_DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
 TARGET_HOME=/home/yocto
@@ -38,7 +39,7 @@ docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
       -v $HOST_DOCKER_OPT:$TARGET_OPT \
       -v $HOST_DL_DIR:$TARGET_DL_DIR \
       -v $HOST_DOCKER_HOME:$TARGET_HOME \
-      -w $TARGET_HOME yocto-raspberry $COMMAND_LINE
+      -w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
 
 if [ x$COMMAND_ARG = x"build" ] ; then
       ls -Ll $HOST_DOCKER_HOME/build-rpi/tmp/deploy/images/raspberrypi4/*-image-*
