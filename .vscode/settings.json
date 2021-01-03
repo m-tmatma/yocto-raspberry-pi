@@ -13,5 +13,6 @@
     },
     "editor.renderWhitespace": "all",
     "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "bracketLens.mode": "auto"
 }
