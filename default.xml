@@ -14,7 +14,7 @@
   <project remote="yocto-mirror-raspberrypi"      name="meta-raspberrypi"     path="container/home/yocto/meta-raspberrypi"     />
   <!--
   <project remote="meta-qt5"                      name="meta-qt5"             path="container/home/yocto/meta-qt5"             />
-  <project remote="meta-rpi"                      name="meta-rpi"             path="container/home/yocto/meta-rpi"             />
   -->
+  <project remote="meta-rpi"                      name="meta-rpi"             path="container/home/yocto/meta-rpi"             />
 </manifest>
 
