@@ -15,7 +15,7 @@ bitbake-layers add-layer $SCRIPT_DIR/meta-test
 
 cat $SCRIPT_DIR/extra-local.conf >> conf/local.conf
 
-TARGET_SSTATE_DIR=/home/shared/sstate-cache
+#TARGET_SSTATE_DIR=/home/shared/sstate-cache
 TARGET_DL_DIR=/home/shared/downloads
 
 rm -f conf/site.conf
