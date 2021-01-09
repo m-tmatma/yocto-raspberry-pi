@@ -31,6 +31,7 @@ fi
 #bitbake meta-ide-support
 #bitbake meta-toolchain
 bitbake test-image -c populate_sdk
+bitbake test-image -c rootfs
 bitbake test-image
 
 find $SCRIPT_DIR/build-rpi/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
