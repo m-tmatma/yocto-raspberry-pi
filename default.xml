@@ -14,7 +14,7 @@
   <project remote="yocto-mirror-raspberrypi"      upstream="warrior" name="meta-raspberrypi"     path="container/home/yocto/meta-raspberrypi"     />
   <project remote="meta-qt5"                      upstream="warrior" name="meta-qt5"             path="container/home/yocto/meta-qt5"             />
   <project remote="meta-rpi"                      upstream="warrior" name="meta-rpi"             path="container/home/yocto/meta-rpi"             />
-  <project remote="meta-test"                     revision="master"  name="meta-test"            path="container/home/yocto/meta-test"            />
+  <project remote="meta-test"                     revision="feature/image-buildinfo"  name="meta-test"            path="container/home/yocto/meta-test"            />
   <project remote="meta-codechecker"              revision="master"  name="meta-codechecker"     path="container/home/yocto/meta-codechecker"            />
 </manifest>
 
