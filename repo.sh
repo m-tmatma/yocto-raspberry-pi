@@ -2,15 +2,11 @@
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
-# 'repo' command
-REPO_DIR=$SCRIPT_DIR/bin
-REPO=$REPO_DIR/repo
-
-# get 'repo'
-mkdir -p $REPO_DIR
-curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ${REPO}
-chmod a+x ${REPO}
-PATH=${REPO_DIR}:$PATH
+REPO_PATH=$(which repo)
+if [ -z "$REPO_PATH" ]; then
+    echo "Please install google repo by 'sudo apt install -y repo' on ubuntu 20.10 or later."
+    exit 1
+fi
 
 repo init -m default.xml -u $(git rev-parse --show-toplevel) -b $(git rev-parse HEAD)
 repo sync -j4
