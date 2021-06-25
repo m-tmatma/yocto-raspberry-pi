@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update --fix-missing && apt-get dist-upgrade -y && apt-get autoremove --purge -y \
  && apt-get install --fix-missing -y \
