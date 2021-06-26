@@ -1,7 +1,8 @@
 #!/bin/sh
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
-IMG_FILE=$SCRIPT_DIR/container/home/yocto/build-rpi/tmp/deploy/images/raspberrypi4/console-image-raspberrypi4.rpi-sdimg
+IMAGE_NAME=core-image-full-cmdline
+IMG_FILE=$SCRIPT_DIR/container/home/yocto/build-rpi/tmp/deploy/images/raspberrypi4/$IMAGE_NAME-raspberrypi4.rpi-sdimg
 
 LOOPBACK_DEVICE=`losetup --show -f -P $IMG_FILE`
 MOUNT_POINT=/mnt/rpi-img
