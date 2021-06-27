@@ -7,17 +7,11 @@ rm -rf $MIRROR_DIR
 mkdir  $MIRROR_DIR
 
 mirror_yocoto() {
-    git clone --bare git://git.yoctoproject.org/$1 $1
-    cd $1
-    git push --mirror https://github.com/yocto-mirror-raspberrypi/$1.git
-    cd ..
-
-    rm -rf $1
+    TARGET_DIR=$SCRIPT_DIR/$1
+    git clone --bare git://git.yoctoproject.org/$1 $TARGET_DIR
+    git -C $TARGET_DIR push --mirror https://github.com/yocto-mirror-raspberrypi/$1.git
+    rm -rf $TARGET_DIR
 }
-
-cd $MIRROR_DIR
 
 mirror_yocoto poky
 mirror_yocoto meta-raspberrypi
-
-cd $SCRIPT_DIR
