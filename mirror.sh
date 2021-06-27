@@ -8,7 +8,7 @@ mkdir  $MIRROR_DIR
 
 mirror_yocoto() {
     TARGET_DIR=$SCRIPT_DIR/$1
-    git clone --bare git://git.yoctoproject.org/$1 $TARGET_DIR
+    git clone --mirror git://git.yoctoproject.org/$1 $TARGET_DIR
     git -C $TARGET_DIR push --mirror https://github.com/yocto-mirror-raspberrypi/$1.git
     rm -rf $TARGET_DIR
 }
