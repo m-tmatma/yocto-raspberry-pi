@@ -10,3 +10,4 @@ container/home/yocto/.*
 nohup.out*
 .repo
 bin
+docker/toolchain/poky-*.sh
