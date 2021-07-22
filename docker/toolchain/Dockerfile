@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update --fix-missing \
- && apt-get install -y python3 vim nano \
+ && apt-get install -y python3  \
  && rm -rf /var/lib/apt/lists/* \
  && apt-get autoremove --purge -y
 
