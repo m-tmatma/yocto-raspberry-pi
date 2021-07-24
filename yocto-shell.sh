@@ -37,7 +37,8 @@ else
 	exit 0
 fi
 
-docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
+docker run $ADDITIONAL_OPT --rm \
+	-e LOCAL_UID=$(id -u $USER) -e LOCAL_GID=$(id -g $USER) \
 	--name $CONTAINER_NAME \
 	-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
 	-v $HOST_DOCKER_OPT:$TARGET_OPT \
