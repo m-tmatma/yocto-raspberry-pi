@@ -16,6 +16,8 @@ RUN apt-get update --fix-missing && apt-get dist-upgrade -y && apt-get autoremov
      zstd \
      bash-completion \
      kmod \
+     iproute2 \
+     iptables \
  && rm -rf /var/lib/apt/lists/*
 
 # Locales
