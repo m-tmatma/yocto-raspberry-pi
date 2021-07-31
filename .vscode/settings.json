@@ -6,7 +6,7 @@
         "**/.repo": true,
         "**/.subversion": true,
         "**/.wget-hsts": true,
-        "**/build-rpi": true,
+        "**/build-*": true,
         "**/nohup*": true,
         "bin/repo": true,
         "container/opt": true
