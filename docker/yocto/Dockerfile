@@ -11,6 +11,7 @@ RUN apt-get update --fix-missing && apt-get dist-upgrade -y && apt-get autoremov
      nano \
      vim  \
      tmux \
+     gosu \
  && rm -rf /var/lib/apt/lists/*
 
 # Locales
@@ -21,10 +22,7 @@ ENV LC_ALL   en_US.UTF-8
 ENV LANG     en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-ENV USER yocto
-ENV HOME /home/${USER}
-ENV SHELL /bin/bash
-RUN useradd -m ${USER}
-RUN gpasswd -a ${USER} sudo
-RUN echo "${USER}:yocto" | chpasswd
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
