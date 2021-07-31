@@ -38,10 +38,14 @@ if [ x$COMMAND_ARG = x"build" ] ; then
 elif [ x$COMMAND_ARG = x"shell" ] ; then
 	COMMAND_LINE=/bin/bash
 	ADDITIONAL_OPT=-it
+elif [ x$COMMAND_ARG = x"runemu" ] ; then
+	COMMAND_LINE=$TARGET_HOME/run-qemu.sh
+	ADDITIONAL_OPT="-it --privileged"
 else
 	echo usage:
 	echo $0 build
 	echo $0 shell
+	echo $0 runemu
 	exit 0
 fi
 
