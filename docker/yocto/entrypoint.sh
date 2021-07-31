@@ -11,5 +11,7 @@ groupmod -g $GROUP_ID $USERNAME
 export USER=$USERNAME
 export HOME=$HOME_DIR
 
+echo yocto ALL=NOPASSWD: ALL >> "/etc/sudoers"
+
 exec /usr/sbin/gosu $USERNAME "$@"
 
