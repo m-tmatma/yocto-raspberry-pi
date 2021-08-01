@@ -31,7 +31,7 @@ fi
 
 #bitbake core-image-full-cmdline
 #bitbake console-image
-bitbake jansson-util-lib  jansson-python  jansson-test -c cleansstate
+bitbake jansson-util-lib  jansson-python  jansson-test  jansson-gtest -c cleansstate
 bitbake custom-image -c rootfs -f
 bitbake custom-image
 
