@@ -30,6 +30,7 @@ if [ x$COMMAND_ARG = x"build" ] ; then
 	if [ x$TARGET_ARG = x"ras" -o x$TARGET_ARG = x"" ] ; then
 		COMMAND_LINE=$TARGET_HOME/build-yocto.sh
 		ADDITIONAL_OPT=
+		TARGET_ARG=ras
 	elif [ x$TARGET_ARG = x"qemu" ] ; then
 		COMMAND_LINE=$TARGET_HOME/build-qemu.sh
 		ADDITIONAL_OPT=
@@ -60,5 +61,9 @@ docker run $ADDITIONAL_OPT --rm \
 	-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
 
 if [ x$COMMAND_ARG = x"build" ] ; then
-	ls -Ll $HOST_DOCKER_HOME/$BUILD_DIR/tmp/deploy/images/raspberrypi4/*-image-*
+	if [ x$TARGET_ARG = x"ras" ] ; then
+		ls -Ll $HOST_DOCKER_HOME/$BUILD_DIR/tmp/deploy/images/raspberrypi4/*-image-*
+	elif [ x$TARGET_ARG = x"qemu" ] ; then
+		ls -Ll $HOST_DOCKER_HOME/build-qemu/tmp/deploy/images/qemux86-64/*.rootfs.*
+	fi
 fi
