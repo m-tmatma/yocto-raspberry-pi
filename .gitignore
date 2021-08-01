@@ -5,7 +5,12 @@ downloads
 container/home/yocto/build-rpi/
 container/home/yocto/poky/
 container/opt/poky/
-container/home/yocto/meta-*
+container/home/yocto/meta-jumpnow
+container/home/yocto/meta-openembedded
+container/home/yocto/meta-qt5
+container/home/yocto/meta-raspberrypi
+container/home/yocto/meta-rpi
+container/home/yocto/meta-security
 container/home/yocto/.*
 nohup.out*
 .repo
