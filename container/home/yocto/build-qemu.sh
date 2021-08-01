@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
@@ -31,5 +31,6 @@ fi
 
 #bitbake core-image-full-cmdline
 #bitbake console-image
+bitbake jansson-util-lib  jansson-python  jansson-test -c cleansstate
 bitbake custom-image
 
