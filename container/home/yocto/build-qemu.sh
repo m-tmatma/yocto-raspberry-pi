@@ -4,6 +4,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 TARGET_ARCH=qemux86-64
 source $SCRIPT_DIR/poky/oe-init-build-env $SCRIPT_DIR/build-qemu
+bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-oe
 bitbake-layers add-layer $SCRIPT_DIR/meta-janssontest
 bitbake-layers add-layer $SCRIPT_DIR/meta-custom-image
 
