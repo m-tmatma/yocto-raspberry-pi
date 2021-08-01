@@ -8,9 +8,7 @@
   <remote fetch="https://github.com/jumpnow"                     name="meta-rpi"/>
 
   <project remote="yocto-mirror-raspberrypi"      name="poky"                 path="container/home/yocto/poky"                 />
-  <!--
   <project remote="meta-openembedded"             name="meta-openembedded"    path="container/home/yocto/meta-openembedded"    />
-  -->
   <project remote="yocto-mirror-raspberrypi"      name="meta-raspberrypi"     path="container/home/yocto/meta-raspberrypi"     />
   <!--
   <project remote="meta-qt5"                      name="meta-qt5"             path="container/home/yocto/meta-qt5"             />
