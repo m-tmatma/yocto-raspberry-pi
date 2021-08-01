@@ -4,3 +4,7 @@ include recipes-extended/images/core-image-full-cmdline.bb
 IMAGE_INSTALL += " \
 	kernel-modules \
 	"
+
+IMAGE_INSTALL += " \
+	jansson-test \
+	"
