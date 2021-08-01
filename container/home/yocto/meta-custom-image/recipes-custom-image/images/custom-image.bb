@@ -6,5 +6,11 @@ IMAGE_INSTALL += " \
 	"
 
 IMAGE_INSTALL += " \
+	python3 \
 	jansson-test \
+	jansson-python \
 	"
+
+RDEPENDS_${PN} += "python3"
+RDEPENDS_${PN} += "jansson-test"
+RDEPENDS_${PN} += "jansson-util-lib"
