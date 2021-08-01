@@ -1,0 +1,3 @@
+[submodule "container/home/yocto/meta-janssontest"]
+	path = container/home/yocto/meta-janssontest
+	url = https://github.com/m-tmatma/meta-janssontest.git
