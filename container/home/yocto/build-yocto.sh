@@ -4,6 +4,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 source $SCRIPT_DIR/poky/oe-init-build-env $SCRIPT_DIR/build-rpi
 bitbake-layers add-layer $SCRIPT_DIR/meta-raspberrypi
+bitbake-layers add-layer $SCRIPT_DIR/meta-test-image
 
 cat $SCRIPT_DIR/extra-local.conf >> conf/local.conf
 
