@@ -6,6 +6,7 @@
   <remote fetch="https://github.com/openembedded"                name="meta-openembedded"/>
   <remote fetch="https://github.com/meta-qt5"                    name="meta-qt5"/>
   <remote fetch="https://github.com/jumpnow"                     name="meta-rpi"/>
+  <remote fetch="https://github.com/m-tmatma"                    name="meta-test-image"/>
 
   <project remote="yocto-mirror-raspberrypi"      name="poky"                 path="container/home/yocto/poky"                 />
   <!--
@@ -16,5 +17,6 @@
   <project remote="meta-qt5"                      name="meta-qt5"             path="container/home/yocto/meta-qt5"             />
   <project remote="meta-rpi"                      name="meta-rpi"             path="container/home/yocto/meta-rpi"             />
   -->
+  <project remote="meta-test-image" revision="master" name="meta-test-image"   path="container/home/yocto/meta-test-image"             />
 </manifest>
 
