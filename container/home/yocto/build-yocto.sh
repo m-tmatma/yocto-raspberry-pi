@@ -18,12 +18,12 @@ if [ -e "$TARGET_DL_DIR" ] ; then
     echo DL_DIR=\"$TARGET_DL_DIR\" >> conf/site.conf
 fi
 
-#bitbake console-image
-#bitbake core-image-full-cmdline -c populate_sdk
-bitbake meta-ide-support
-bitbake meta-toolchain
+# bitbake console-image
+# bitbake core-image-full-cmdline -c populate_sdk
+# bitbake meta-ide-support
+# bitbake meta-toolchain
 
-find $SCRIPT_DIR/build-rpi/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
+# find $SCRIPT_DIR/build-rpi/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
 
 bitbake custom-test-image
 #bitbake console-image
