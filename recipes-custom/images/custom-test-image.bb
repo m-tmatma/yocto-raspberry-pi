@@ -1,7 +1,10 @@
 DESCRIPTION = "test"
-require recipes-core/images/core-image-minimal.bb
+require recipes-extended/images/core-image-full-cmdline.bb
 
-IMAGE_INSTALL = " \
+IMAGE_INSTALL_append = " \
     coreutils \
     kernel-modules \
+"
+IMAGE_INSTALL_append = " \
+    nginx \
 "
