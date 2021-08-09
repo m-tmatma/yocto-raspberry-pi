@@ -4,7 +4,12 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 TARGET_ARCH=qemux86-64
 source $SCRIPT_DIR/poky/oe-init-build-env $SCRIPT_DIR/build-qemu
+bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-oe
+bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-python
+bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-networking
+bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-webserver
 #bitbake-layers add-layer $SCRIPT_DIR/meta-raspberrypi
+bitbake-layers add-layer $SCRIPT_DIR/meta-test-image
 
 #cat $SCRIPT_DIR/extra-local.conf >> conf/local.conf
 
@@ -26,6 +31,6 @@ fi
 
 # find $SCRIPT_DIR/build-qemu/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
 
-bitbake core-image-full-cmdline
+bitbake custom-test-image
 #bitbake console-image
 
