@@ -1,0 +1,3 @@
+[submodule "container/home/yocto/meta-nginx-plugin-test"]
+	path = container/home/yocto/meta-nginx-plugin-test
+	url = https://github.com/m-tmatma/meta-nginx-plugin-test.git
