@@ -11,6 +11,6 @@ if [ -z "$USBDEV" ]; then
 fi
 
 INFILE=./container/home/yocto/build-rpi/tmp/deploy/images/raspberrypi4/custom-test-image-raspberrypi4.wic.bz2
-sudo umount ${OUTDEVICE}?
+sudo umount ${USBDEV}?
 lsblk
-bzcat ${INFILE} | sudo dd of=${OUTDEVICE} status=progress
+bzcat ${INFILE} | sudo dd of=${USBDEV} status=progress
