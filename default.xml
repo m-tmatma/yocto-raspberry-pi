@@ -3,16 +3,15 @@
   <default sync-j="4" revision="dunfell"/>
 
   <remote fetch="https://git.yoctoproject.org/git"    name="yocto"/>
-  <remote fetch="https://github.com/openembedded"                name="meta-openembedded"/>
-  <remote fetch="https://github.com/meta-qt5"                    name="meta-qt5"/>
-  <remote fetch="https://github.com/jumpnow"                     name="meta-rpi"/>
+  <remote fetch="https://github.com/openembedded"     name="meta-openembedded"/>
+  <remote fetch="https://github.com/meta-qt5"         name="meta-qt5"/>
+  <remote fetch="https://github.com/jumpnow"          name="meta-rpi"/>
 
-  <project remote="yocto"      name="poky"                 path="container/home/yocto/poky"                 />
-  <project remote="meta-openembedded"             name="meta-openembedded"    path="container/home/yocto/meta-openembedded"    />
-  <project remote="yocto"      name="meta-raspberrypi"     path="container/home/yocto/meta-raspberrypi"     />
+  <project remote="yocto"               name="poky"                 path="container/home/yocto/poky"                 />
+  <project remote="meta-openembedded"   name="meta-openembedded"    path="container/home/yocto/meta-openembedded"    />
+  <project remote="yocto"               name="meta-raspberrypi"     path="container/home/yocto/meta-raspberrypi"     />
   <!--
-  <project remote="meta-qt5"                      name="meta-qt5"             path="container/home/yocto/meta-qt5"             />
-  <project remote="meta-rpi"                      name="meta-rpi"             path="container/home/yocto/meta-rpi"             />
+  <project remote="meta-qt5"            name="meta-qt5"             path="container/home/yocto/meta-qt5"             />
+  <project remote="meta-rpi"            name="meta-rpi"             path="container/home/yocto/meta-rpi"             />
   -->
 </manifest>
-
