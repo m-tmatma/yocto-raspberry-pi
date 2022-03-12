@@ -12,6 +12,8 @@ RUN apt-get update --fix-missing && apt-get dist-upgrade -y && apt-get autoremov
      vim  \
      tmux \
      gosu \
+     liblz4-tool \
+     zstd \
  && rm -rf /var/lib/apt/lists/*
 
 # Locales
