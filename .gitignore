@@ -3,6 +3,7 @@
 .bash_history
 downloads
 container/home/yocto/build-rpi/
+container/home/yocto/build-rpi-musl/
 container/home/yocto/poky/
 container/opt/poky/
 container/home/yocto/meta-jumpnow

@@ -13,7 +13,7 @@ if [ -z "$USBDEV" ]; then
     exit 1
 fi
 
-INFILE=./container/home/yocto/build-rpi/tmp/deploy/images/raspberrypi4/custom-test-image-raspberrypi4.wic.bz2
+INFILE=./container/home/yocto/build-rpi-musl/tmp/deploy/images/raspberrypi4/custom-test-image-raspberrypi4.wic.bz2
 sudo umount ${USBDEV}?
 lsblk
 bzcat ${INFILE} | sudo dd of=${USBDEV} status=progress

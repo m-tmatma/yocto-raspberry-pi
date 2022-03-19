@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
-source $SCRIPT_DIR/poky/oe-init-build-env $SCRIPT_DIR/build-rpi
+source $SCRIPT_DIR/poky/oe-init-build-env $SCRIPT_DIR/build-rpi-musl
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-oe
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-python
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-networking
