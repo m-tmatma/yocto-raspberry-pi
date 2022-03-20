@@ -29,8 +29,9 @@ fi
 # bitbake meta-ide-support
 # bitbake meta-toolchain
 
-# find $SCRIPT_DIR/build-qemu/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
+# find $BUILDDIR/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
 
 bitbake custom-test-image
 #bitbake console-image
+find $BUILDDIR/tmp/deploy/images
 
