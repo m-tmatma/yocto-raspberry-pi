@@ -1,9 +1,12 @@
 #!/bin/sh
 
-USBDEV=$(ls /sys/block/ -1 | \
-  xargs -I{} echo /sys/block/{} | \
-  xargs readlink | \
-  grep usb | sed -e 's!.*/\([a-z]\+\)!\1!')
+USBDEV=$1
+if [ -z "$USBDEV" ]; then
+  USBDEV=$(ls /sys/block/ -1 | \
+    xargs -I{} echo /sys/block/{} | \
+    xargs readlink | \
+    grep usb | sed -e 's!.*/\([a-z]\+\)!\1!')
+fi
 
 if [ -z "$USBDEV" ]; then
     echo "not found usb device"
