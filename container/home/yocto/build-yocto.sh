@@ -29,7 +29,7 @@ fi
 # bitbake meta-ide-support
 # bitbake meta-toolchain
 
-# find $SCRIPT_DIR/build-rpi/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
+# find $BUILD_DIR/tmp/deploy/sdk -name *.sh | xargs -n 1 -I "{}" sh -c "{} -y"
 
 bitbake custom-test-image
 #bitbake console-image
