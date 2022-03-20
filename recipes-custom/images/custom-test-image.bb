@@ -10,4 +10,3 @@ IMAGE_INSTALL:append = " \
     ntpdate \
     avahi-daemon \
 "
-
