@@ -7,7 +7,7 @@ bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-oe
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-python
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-networking
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-webserver
-bitbake-layers add-layer $SCRIPT_DIR/meta-nginx-plugin-test
+#bitbake-layers add-layer $SCRIPT_DIR/meta-nginx-plugin-test
 bitbake-layers add-layer $SCRIPT_DIR/meta-raspberrypi
 bitbake-layers add-layer $SCRIPT_DIR/meta-test-image
 
