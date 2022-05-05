@@ -12,8 +12,10 @@ if [ -z "$USBDEV" ]; then
     echo "not found usb device"
     exit 1
 fi
+SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+source $SCRIPT_DIR/container/home/yocto/setting.sh
 
-INFILE=./container/home/yocto/build-rpi/tmp/deploy/images/raspberrypi4/custom-test-image-raspberrypi4.wic.bz2
+INFILE=./container/home/yocto/$BUILD_DIR/tmp/deploy/images/raspberrypi4/custom-test-image-raspberrypi4.wic.bz2
 sudo umount ${USBDEV}?
 lsblk
 bzcat ${INFILE} | sudo dd of=${USBDEV} status=progress
