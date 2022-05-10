@@ -6,10 +6,12 @@
   <remote fetch="https://github.com/openembedded"     name="meta-openembedded"/>
   <remote fetch="https://github.com/meta-qt5"         name="meta-qt5"/>
   <remote fetch="https://github.com/jumpnow"          name="meta-rpi"/>
+  <remote fetch="https://github.com/meta-rust"        name="meta-rust"/>
 
   <project remote="yocto"               name="poky"                 path="container/home/yocto/poky"                 />
   <project remote="meta-openembedded"   name="meta-openembedded"    path="container/home/yocto/meta-openembedded"    />
   <project remote="yocto"               name="meta-raspberrypi"     path="container/home/yocto/meta-raspberrypi"     />
+  <project remote="meta-rust"           revision="c654f5cb928bd4f4c7da7d74a8356fd2a94283f6" name="meta-rust"   path="container/home/yocto/meta-rust"     />
   <!--
   <project remote="meta-qt5"            name="meta-qt5"             path="container/home/yocto/meta-qt5"             />
   <project remote="meta-rpi"            name="meta-rpi"             path="container/home/yocto/meta-rpi"             />
