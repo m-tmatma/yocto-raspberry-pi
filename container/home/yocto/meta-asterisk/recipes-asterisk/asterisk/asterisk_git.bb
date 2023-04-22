@@ -21,7 +21,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=3c6764ffcbe996d1d8f919b393ccdd67 \
                     file://codecs/ilbc/LICENSE;md5=ad296492125bc71530d06234d9bfebe0 \
                     file://codecs/ilbc/LICENSE_ADDENDUM;md5=3a2a4c5f0fd98c1bdc8a6f435d76e3f9"
 
-SRC_URI = "git://gerrit.asterisk.org/asterisk;protocol=https;branch=master"
+SRC_URI = "git://gerrit.asterisk.org/asterisk;protocol=https;branch=20.2"
 PV = "20.2.1+git${SRCPV}"
 SRCREV = "1d64cb99d2899c6f73acd3ae4f475b8fc3fb58f1"
 
