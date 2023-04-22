@@ -35,7 +35,7 @@ DEPENDS = "libxcrypt bison-native flex-native curl"
 # NOTE: if this software is not capable of being built in a separate build directory
 # from the source, you should replace autotools with autotools-brokensep in the
 # inherit line
-inherit python3native autotools
+inherit python3native autotools pkgconfig
 
 INITSCRIPT_NAME = "asterisk"
 INITSCRIPT_PARAMS = "defaults 60"
