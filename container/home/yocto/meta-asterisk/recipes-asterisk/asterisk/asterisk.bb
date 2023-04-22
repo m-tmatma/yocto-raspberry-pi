@@ -70,7 +70,7 @@ export ASTCFLAGS = "-fsigned-char -I${STAGING_INCDIR} -DPATH_MAX=4096"
 export ASTLDFLAGS="${LDFLAGS} -lpthread -ldl -lresolv "
 export PROC="${ARCH}"
 
-do_configure_prepend () {
+do_configure:prepend () {
 	sed -i 's:/var:${localstatedir}:' ${WORKDIR}/logrotate
 	sed -i 's:/etc/init.d:${sysconfdir}/init.d:' ${WORKDIR}/logrotate
 	sed -i 's:/var:${localstatedir}:' ${WORKDIR}/volatiles
@@ -101,14 +101,14 @@ do_stage() {
 	autotools_stage_includes
 }
 
-do_install_append() {
+do_install:append() {
         install -d ${D}${sysconfdir}/init.d/
 	install -m 755 ${WORKDIR}/init ${D}${sysconfdir}/init.d/asterisk
 	install -c -D -m 644 ${WORKDIR}/logrotate ${D}${sysconfdir}/logrotate.d/asterisk
 	install -c -D -m 644 ${WORKDIR}/volatiles ${D}${sysconfdir}/default/volatiles/asterisk
 }
 
-pkg_postinst_prepend() {
+pkg_postinst:prepend() {
 	grep -q asterisk  ${sysconfdir}/group || addgroup --system asterisk
 	grep -q asterisk ${sysconfdir}/passwd || adduser --system --home ${localstatedir}/run/asterisk --no-create-home --disabled-password --ingroup asterisk -s ${base_bindir}/false asterisk
 	chown -R asterisk:asterisk ${libdir}/asterisk ${localstatedir}/lib/asterisk ${localstatedir}/spool/asterisk ${localstatedir}/log/asterisk ${localstatedir}/run/asterisk ${sysconfdir}/asterisk
