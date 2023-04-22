@@ -9,6 +9,7 @@ bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-networking
 bitbake-layers add-layer $SCRIPT_DIR/meta-openembedded/meta-webserver
 #bitbake-layers add-layer $SCRIPT_DIR/meta-nginx-plugin-test
 bitbake-layers add-layer $SCRIPT_DIR/meta-raspberrypi
+bitbake-layers add-layer $SCRIPT_DIR/meta-asterisk
 bitbake-layers add-layer $SCRIPT_DIR/meta-test-image
 
 cat $SCRIPT_DIR/extra-local.conf >> conf/local.conf
