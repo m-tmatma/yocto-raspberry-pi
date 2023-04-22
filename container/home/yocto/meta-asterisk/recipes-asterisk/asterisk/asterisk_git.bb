@@ -30,12 +30,14 @@ S = "${WORKDIR}/git"
 # NOTE: the following prog dependencies are unknown, ignoring: python2 basename openssl xml dot xmllint patch gmd5sum dirname python2.7 sha1sum sh bash cmp cat nm alembic cut ldconfig bzip2 md5 realpath doxygen curl ln md5sum digest wget fetch git xmlstarlet grep
 # NOTE: the following library dependencies are unknown, ignoring: gsm tonezone pq
 #       (this is based on recipes that have previously been built and packaged)
-DEPENDS = "libxcrypt bison-native flex-native curl"
+DEPENDS = "speex readline zlib openssl curl popt gnutls sqlite libogg libvorbis"
+DEPENDS += "libxcrypt bison-native flex-native libtool-native curl"
+DEPENDS += "libedit"
 
 # NOTE: if this software is not capable of being built in a separate build directory
 # from the source, you should replace autotools with autotools-brokensep in the
 # inherit line
-inherit python3native autotools pkgconfig
+inherit python3native autotools
 
 INITSCRIPT_NAME = "asterisk"
 INITSCRIPT_PARAMS = "defaults 60"
