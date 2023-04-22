@@ -108,11 +108,11 @@ do_install:append() {
 	install -c -D -m 644 ${WORKDIR}/volatiles ${D}${sysconfdir}/default/volatiles/asterisk
 }
 
-pkg_postinst:prepend() {
-	grep -q asterisk  ${sysconfdir}/group || addgroup --system asterisk
-	grep -q asterisk ${sysconfdir}/passwd || adduser --system --home ${localstatedir}/run/asterisk --no-create-home --disabled-password --ingroup asterisk -s ${base_bindir}/false asterisk
-	chown -R asterisk:asterisk ${libdir}/asterisk ${localstatedir}/lib/asterisk ${localstatedir}/spool/asterisk ${localstatedir}/log/asterisk ${localstatedir}/run/asterisk ${sysconfdir}/asterisk
-}
+# pkg_postinst:prepend() {
+# 	grep -q asterisk  ${sysconfdir}/group || addgroup --system asterisk
+# 	grep -q asterisk ${sysconfdir}/passwd || adduser --system --home ${localstatedir}/run/asterisk --no-create-home --disabled-password --ingroup asterisk -s ${base_bindir}/false asterisk
+# 	chown -R asterisk:asterisk ${libdir}/asterisk ${localstatedir}/lib/asterisk ${localstatedir}/spool/asterisk ${localstatedir}/log/asterisk ${localstatedir}/run/asterisk ${sysconfdir}/asterisk
+# }
 
 FILES:${PN} += "${libdir}/asterisk/modules/*"
 FILES:${PN}-dbg += "${libdir}/asterisk/modules/.debug \
