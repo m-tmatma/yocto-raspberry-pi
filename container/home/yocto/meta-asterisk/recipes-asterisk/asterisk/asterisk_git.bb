@@ -33,6 +33,7 @@ S = "${WORKDIR}/git"
 DEPENDS = "speex readline zlib openssl curl popt gnutls sqlite libogg libvorbis"
 DEPENDS += "libxcrypt bison-native flex-native libtool-native curl"
 DEPENDS += "libedit"
+DEPENDS += "jansson"
 
 # NOTE: if this software is not capable of being built in a separate build directory
 # from the source, you should replace autotools with autotools-brokensep in the
@@ -67,6 +68,10 @@ inherit python3native autotools pkgconfig
 # 			--without-postgres\
 # 			--without-zaptel\
 # 			"
+
+EXTRA_OECONF =  " \
+    --with-pjproject \
+"
 
 # export ASTCFLAGS = "-fsigned-char -I${STAGING_INCDIR} -DPATH_MAX=4096"
 # export ASTLDFLAGS="${LDFLAGS} -lpthread -ldl -lresolv "
