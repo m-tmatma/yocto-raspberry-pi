@@ -14,16 +14,11 @@
 #   codecs/ilbc/LICENSE
 #   codecs/ilbc/LICENSE_ADDENDUM
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://COPYING;md5=3c6764ffcbe996d1d8f919b393ccdd67 \
-                    file://LICENSE;md5=e8f2ac12f40125052f5a09c009f2f11a \
-                    file://addons/ooh323c/COPYING;md5=11c7b65c4a4acb9d5175f7e9bf99c403 \
-                    file://codecs/gsm/COPYRIGHT;md5=97e265fa1fd10a668bd99c4945fb9200 \
-                    file://codecs/ilbc/LICENSE;md5=ad296492125bc71530d06234d9bfebe0 \
-                    file://codecs/ilbc/LICENSE_ADDENDUM;md5=3a2a4c5f0fd98c1bdc8a6f435d76e3f9"
+LIC_FILES_CHKSUM = "file://COPYING;md5=3c6764ffcbe996d1d8f919b393ccdd67"
 
-SRC_URI = "git://gerrit.asterisk.org/asterisk;protocol=https;branch=20.2"
-PV = "20.2.1+git${SRCPV}"
-SRCREV = "1d64cb99d2899c6f73acd3ae4f475b8fc3fb58f1"
+SRC_URI = "git://gerrit.asterisk.org/asterisk;protocol=https;branch=18.9"
+PV = "18.9.0+git${SRCPV}"
+SRCREV = "85601849c646709836f59007d04ca829ef0d5955"
 
 S = "${WORKDIR}/git"
 
