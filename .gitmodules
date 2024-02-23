@@ -1,3 +1,0 @@
-[submodule "container/home/yocto/meta-test-image"]
-	path = container/home/yocto/meta-test-image
-	url = https://github.com/m-tmatma/meta-test-image.git
