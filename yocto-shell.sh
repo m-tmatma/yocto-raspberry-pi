@@ -48,5 +48,5 @@ docker run $ADDITIONAL_OPT --rm \
 	-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
 
 if [ x$COMMAND_ARG = x"build" ] ; then
-	ls -Ll $HOST_DOCKER_HOME/$BUILD_DIR/tmp/deploy/images/raspberrypi4/*-image-*
+	ls -Ll $HOST_DOCKER_HOME/$BUILD_DIR/tmp/deploy/images/raspberrypi5/*-image-*
 fi
