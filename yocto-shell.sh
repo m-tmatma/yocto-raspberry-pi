@@ -25,16 +25,29 @@ mkdir -p $HOST_SSTATE_DIR
 mkdir -p $HOST_DL_DIR
 
 COMMAND_ARG=$1
+TARGET_ARG=$2
 if [ x$COMMAND_ARG = x"build" ] ; then
-	COMMAND_LINE=$TARGET_HOME/build-yocto.sh
-	ADDITIONAL_OPT=
+	if [ x$TARGET_ARG = x"ras" -o x$TARGET_ARG = x"" ] ; then
+		COMMAND_LINE=$TARGET_HOME/build-yocto.sh
+		ADDITIONAL_OPT=
+		TARGET_ARG=ras
+	elif [ x$TARGET_ARG = x"qemu" ] ; then
+		COMMAND_LINE=$TARGET_HOME/build-qemu.sh
+		ADDITIONAL_OPT=
+	else
+		echo $0
+	fi
 elif [ x$COMMAND_ARG = x"shell" ] ; then
 	COMMAND_LINE=/bin/bash
 	ADDITIONAL_OPT=-it
+elif [ x$COMMAND_ARG = x"runemu" ] ; then
+	COMMAND_LINE=$TARGET_HOME/run-qemu.sh
+	ADDITIONAL_OPT="-it --privileged"
 else
 	echo usage:
 	echo $0 build
 	echo $0 shell
+	echo $0 runemu
 	exit 0
 fi
 
@@ -48,5 +61,9 @@ docker run $ADDITIONAL_OPT --rm \
 	-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
 
 if [ x$COMMAND_ARG = x"build" ] ; then
-	ls -Ll $HOST_DOCKER_HOME/$BUILD_DIR/tmp/deploy/images/raspberrypi4/*-image-*
+	if [ x$TARGET_ARG = x"ras" ] ; then
+		ls -Ll $HOST_DOCKER_HOME/$BUILD_DIR/tmp/deploy/images/raspberrypi4/*-image-*
+	elif [ x$TARGET_ARG = x"qemu" ] ; then
+		ls -Ll $HOST_DOCKER_HOME/build-qemu/tmp/deploy/images/qemux86-64/*.rootfs.*
+	fi
 fi
