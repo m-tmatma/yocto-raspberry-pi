@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update --fix-missing && apt-get dist-upgrade -y && apt-get autoremove --purge -y \
  && apt-get install --fix-missing -y \
@@ -12,6 +12,8 @@ RUN apt-get update --fix-missing && apt-get dist-upgrade -y && apt-get autoremov
      vim  \
      tmux \
      gosu \
+     liblz4-tool \
+     zstd \
  && rm -rf /var/lib/apt/lists/*
 
 # Locales

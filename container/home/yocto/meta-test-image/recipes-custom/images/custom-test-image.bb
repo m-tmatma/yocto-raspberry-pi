@@ -10,6 +10,6 @@ IMAGE_INSTALL:append = " \
     ntpdate \
     avahi-daemon \
 "
-IMAGE_INSTALL_append = " \
+IMAGE_INSTALL:append = " \
     go-helloworld \
 "
