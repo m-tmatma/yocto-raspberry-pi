@@ -2,7 +2,7 @@
 *.bak
 .bash_history
 downloads
-container/home/yocto/build-rpi/
+container/home/yocto/build-rpi*
 container/home/yocto/poky/
 container/opt/poky/
 container/home/yocto/meta-jumpnow
