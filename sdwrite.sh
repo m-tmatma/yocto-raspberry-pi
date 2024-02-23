@@ -13,7 +13,7 @@ if [ -z "$USBDEV" ]; then
     exit 1
 fi
 SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
-source $SCRIPT_DIR/container/home/yocto/setting.sh
+. $SCRIPT_DIR/container/home/yocto/setting.sh
 
 INFILE=./container/home/yocto/$BUILD_DIR/tmp/deploy/images/raspberrypi5/custom-test-image-raspberrypi5.wic.bz2
 sudo umount ${USBDEV}?
