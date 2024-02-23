@@ -1,1 +1,1 @@
-BUILD_DIR=build-rpi
+BUILD_DIR=build-rpi5
