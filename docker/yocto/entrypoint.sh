@@ -11,5 +11,9 @@ groupmod -g $GROUP_ID $USERNAME
 export USER=$USERNAME
 export HOME=$HOME_DIR
 
+# add script to suders
+echo yocto ALL=NOPASSWD: /home/yocto/poky/scripts/runqemu-ifup >> "/etc/sudoers"
+echo yocto ALL=NOPASSWD: /home/yocto/poky/scripts/runqemu-ifdown >> "/etc/sudoers"
+
 exec /usr/sbin/gosu $USERNAME "$@"
 

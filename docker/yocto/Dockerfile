@@ -14,6 +14,10 @@ RUN apt-get update --fix-missing && apt-get dist-upgrade -y && apt-get autoremov
      gosu \
      liblz4-tool \
      zstd \
+     bash-completion \
+     kmod \
+     iproute2 \
+     iptables \
  && rm -rf /var/lib/apt/lists/*
 
 # Locales
@@ -23,6 +27,8 @@ RUN dpkg-reconfigure locales \
 ENV LC_ALL   en_US.UTF-8
 ENV LANG     en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
+
+RUN mkdir -p /dev/net && mknod /dev/net/tun c 10 200 && chmod 666 /dev/net/tun
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
